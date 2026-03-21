@@ -1,0 +1,7 @@
+{
+  "name": "eizo-auto-edit",
+  "description": "動画を自動編集し、Gemini 3.1 Pro の映像レビューで品質を自動改善する Claude Code Plugin",
+  "version": "1.0.0",
+  "author": "taishiyamasaki",
+  "keywords": ["video-editing", "ai", "gemini", "auto-edit", "multi-model"]
+}

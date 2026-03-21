@@ -1,0 +1,21 @@
+{
+  "name": "eizo-auto-edit-marketplace",
+  "owner": {
+    "name": "Taishi-Y",
+    "email": ""
+  },
+  "metadata": {
+    "description": "AI動画自動編集 + Gemini 3.1 Pro 映像レビューループ",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "eizo-auto-edit",
+      "source": "./plugins/eizo-auto-edit",
+      "description": "動画の自動編集→Gemini映像レビュー→自動改善ループ",
+      "version": "1.0.0",
+      "category": "video-editing",
+      "tags": ["video", "ai", "gemini", "auto-edit", "youtube"]
+    }
+  ]
+}
