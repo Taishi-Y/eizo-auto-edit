@@ -58,11 +58,23 @@ Phase 8: Gemini レビュー → 自動改善ループ
 
 [**Releases ページ**](https://github.com/Taishi-Y/eizo-auto-edit/releases) から最新の DMG をダウンロード:
 
-- **macOS (Universal)**: `eizo-0.2.0-universal.dmg`
+- **macOS (Apple Silicon)**: `eizo-0.2.1-arm64.dmg`
 
-> 初回起動時は `eizo.app` を右クリック →「開く」でGatekeeper許可が必要です。
+> アプリは Apple 公証済み（Notarized）です。ダブルクリックでそのまま開けます。
 
-### Step 2: プラグインをインストール
+### Step 2: API キーを設定
+
+eizo アプリを起動したら、**設定画面**（右上の歯車アイコン）から以下を設定:
+
+| API キー | 用途 | 必須 |
+|----------|------|------|
+| **Anthropic API Key** | AI エージェント（自動編集の頭脳） | **必須** |
+| **Gemini API Key** | Phase 8 の映像レビューループ | 推奨 |
+
+- Anthropic API Key: https://console.anthropic.com で取得
+- Gemini API Key: https://aistudio.google.com/apikey で取得
+
+### Step 3: プラグインをインストール
 
 [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) を開き、以下を実行:
 
@@ -71,7 +83,7 @@ Phase 8: Gemini レビュー → 自動改善ループ
 /plugin install eizo-auto-edit@eizo-auto-edit-marketplace
 ```
 
-### Step 3: 動画を自動編集
+### Step 4: 動画を自動編集
 
 1. eizo アプリで動画ファイルをインポートし、タイムラインに配置
 2. Claude Code で以下を入力:
@@ -86,19 +98,9 @@ Phase 8: Gemini レビュー → 自動改善ループ
 
 | 項目 | 要件 |
 |------|------|
-| OS | macOS 12+（Apple Silicon / Intel 両対応） |
+| OS | macOS 12+（Apple Silicon） |
 | CLI | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) |
-| API Key | Gemini API Key（Gemini レビュー機能に必要） |
-
-### Gemini API Key の設定
-
-Gemini による映像レビュー機能を使用する場合、環境変数の設定が必要です:
-
-```bash
-# eizo アプリ内の設定画面から Gemini API Key を入力
-# または環境変数で設定
-export GEMINI_API_KEY=your-gemini-api-key
-```
+| API Key | Anthropic API Key（必須）、Gemini API Key（推奨） |
 
 ## 入出力
 
